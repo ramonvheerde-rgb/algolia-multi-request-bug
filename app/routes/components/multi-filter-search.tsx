@@ -22,7 +22,7 @@ export function MultiFilterSearch(props: MultiFilterSearchProps) {
       searchClient={searchClient}
     >
       <h3>
-        Filter: <code>`categories:"Prepaid Phones"`</code>
+        Filter: <code>`categories:"Prepasdaid Phones"`</code>
       </h3>
       <Index indexName="instant_search">
         <Configure filters={`categories:"Prepaid Phones"`} hitsPerPage={5} />

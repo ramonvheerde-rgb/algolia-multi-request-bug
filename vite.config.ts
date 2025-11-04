@@ -21,4 +21,12 @@ export default defineConfig({
     }),
     tsconfigPaths(),
   ],
+  server: {
+    allowedHosts: [
+      "localhost",
+      ".yourdomain.com",
+      "gtf4lh-5173.csb.app",
+      // Add more hosts as needed
+    ],
+  },
 });
