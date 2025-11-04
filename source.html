@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <main>
+      <section><h1>Client-side rendered only</h1></section>
+      <section>
+        <h1>Server-side rendered</h1>
+        <h3>Filter: <code>`categories:&quot;Prepaid Phones&quot;`</code></h3>
+        <div class="ais-Hits">
+          <ol class="ais-Hits-list">
+            <li class="ais-Hits-item">
+              <pre>
+Samsung - 55&quot; Class (54.6&quot; Diag.) - LED - 2160p - Smart - 4K Ultra HD TV - Black</pre
+              >
+            </li>
+            <li class="ais-Hits-item">
+              <pre>
+Samsung - 32&quot; Class (31.5&quot; Diag.) - LED - 1080p - Smart - HDTV - Black</pre
+              >
+            </li>
+            <li class="ais-Hits-item">
+              <pre>
+Samsung - 65&quot; Class (64.5&quot; Diag.) - LED - 2160p - Smart - 4K Ultra HD TV - with High Dynamic Range - Silver</pre
+              >
+            </li>
+            <li class="ais-Hits-item">
+              <pre>
+Samsung - 40&quot; Class (40&quot; Diag.) - LED - 1080p - Smart - HDTV - Black</pre
+              >
+            </li>
+            <li class="ais-Hits-item">
+              <pre>Amazon - Fire TV Stick with Alexa Voice Remote - Black</pre>
+            </li>
+          </ol>
+        </div>
+        <h3>
+          Filter: <code>`categories:&quot;TV &amp; Home Theater&quot;`</code>
+        </h3>
+        <div class="ais-Hits">
+          <ol class="ais-Hits-list">
+            <li class="ais-Hits-item">
+              <pre>
+Samsung - 55&quot; Class (54.6&quot; Diag.) - LED - 2160p - Smart - 4K Ultra HD TV - Black</pre
+              >
+            </li>
+            <li class="ais-Hits-item">
+              <pre>
+Samsung - 32&quot; Class (31.5&quot; Diag.) - LED - 1080p - Smart - HDTV - Black</pre
+              >
+            </li>
+            <li class="ais-Hits-item">
+              <pre>
+Samsung - 65&quot; Class (64.5&quot; Diag.) - LED - 2160p - Smart - 4K Ultra HD TV - with High Dynamic Range - Silver</pre
+              >
+            </li>
+            <li class="ais-Hits-item">
+              <pre>
+Samsung - 40&quot; Class (40&quot; Diag.) - LED - 1080p - Smart - HDTV - Black</pre
+              >
+            </li>
+            <li class="ais-Hits-item">
+              <pre>Amazon - Fire TV Stick with Alexa Voice Remote - Black</pre>
+            </li>
+          </ol>
+        </div>
+      </section>
+    </main>
+    <script>
+      ((STORAGE_KEY, restoreKey) => {
+        if (!window.history.state || !window.history.state.key) {
+          let key = Math.random().toString(32).slice(2);
+          window.history.replaceState(
+            {
+              key,
+            },
+            "",
+          );
+        }
+        try {
+          let positions = JSON.parse(
+            sessionStorage.getItem(STORAGE_KEY) || "{}",
+          );
+          let storedY = positions[restoreKey || window.history.state.key];
+          if (typeof storedY === "number") {
+            window.scrollTo(0, storedY);
+          }
+        } catch (error) {
+          console.error(error);
+          sessionStorage.removeItem(STORAGE_KEY);
+        }
+      })("positions", null);
+    </script>
+    <link
+      rel="modulepreload"
+      href="/node_modules/.pnpm/@remix-run+dev@2.15.1_@remix-run+react@2.15.1_react-dom@18.3.1_react@18.3.1__react@18.3.1_typ_txdmlocev2keo5rwji6tzbt76i/node_modules/@remix-run/dev/dist/config/defaults/entry.client.tsx"
+    /><link rel="modulepreload" href="/app/root.tsx" /><link
+      rel="modulepreload"
+      href="/app/routes/_index.tsx"
+    />
+    <script>
+      window.__remixContext = {
+        basename: "/",
+        future: {
+          v3_fetcherPersist: true,
+          v3_relativeSplatPath: true,
+          v3_throwAbortReason: true,
+          v3_routeConfig: false,
+          v3_singleFetch: true,
+          v3_lazyRouteDiscovery: true,
+          unstable_optimizeDeps: false,
+        },
+        isSpaMode: false,
+      };
+      window.__remixContext.stream = new ReadableStream({
+        start(controller) {
+          window.__remixContext.streamController = controller;
+        },
+      }).pipeThrough(new TextEncoderStream());
+    </script>
+    <script type="module" async="">
+      import "/@id/__x00__virtual:remix/inject-hmr-runtime";
+      import * as route0 from "/app/root.tsx";
+      import * as route1 from "/app/routes/_index.tsx";
+      window.__remixManifest = {
+        version: "0.5685836252553156",
+        url: "/@id/__x00__virtual:remix/browser-manifest",
+        hmr: {
+          runtime: "/@id/__x00__virtual:remix/inject-hmr-runtime",
+        },
+        entry: {
+          module:
+            "/node_modules/.pnpm/@remix-run+dev@2.15.1_@remix-run+react@2.15.1_react-dom@18.3.1_react@18.3.1__react@18.3.1_typ_txdmlocev2keo5rwji6tzbt76i/node_modules/@remix-run/dev/dist/config/defaults/entry.client.tsx",
+          imports: [],
+        },
+        routes: {
+          root: {
+            id: "root",
+            path: "",
+            module: "/app/root.tsx",
+            hasAction: false,
+            hasLoader: false,
+            hasClientAction: false,
+            hasClientLoader: false,
+            hasErrorBoundary: false,
+            imports: [],
+          },
+          "routes/_index": {
+            id: "routes/_index",
+            parentId: "root",
+            index: true,
+            module: "/app/routes/_index.tsx",
+            hasAction: false,
+            hasLoader: true,
+            hasClientAction: false,
+            hasClientLoader: false,
+            hasErrorBoundary: false,
+            imports: [],
+          },
+        },
+      };
+      window.__remixRouteModules = { root: route0, "routes/_index": route1 };
+
+      import(
+        "/node_modules/.pnpm/@remix-run+dev@2.15.1_@remix-run+react@2.15.1_react-dom@18.3.1_react@18.3.1__react@18.3.1_typ_txdmlocev2keo5rwji6tzbt76i/node_modules/@remix-run/dev/dist/config/defaults/entry.client.tsx"
+      );
+    </script>
+  </body>
+</html>
+<!--$?--><template id="B:0"></template
+><!--/$-->
+<div hidden id="S:0">
+  <script>
+    window.__remixContext.streamController.enqueue(
+      '[{"_1":2,"_279":-5,"_280":-5},"loaderData",{"_3":4,"_278":-5},"routes/_index",{"_5":6},"initialResults",{"_7":8},"instant_search",{"_9":10,"_40":41,"_275":276},"state",{"_11":12,"_13":14,"_15":16,"_17":18,"_19":20,"_21":22,"_23":24,"_25":26,"_27":28,"_29":7,"_30":31,"_32":33,"_34":35,"_36":37,"_38":-7,"_39":-7},"facets",[],"disjunctiveFacets",[],"hierarchicalFacets",[],"facetsRefinements",{},"facetsExcludes",{},"disjunctiveFacetsRefinements",{},"numericRefinements",{},"tagRefinements",[],"hierarchicalFacetsRefinements",{},"index","filters","categories:\\"TV \u0026 Home Theater\\"","hitsPerPage",5,"highlightPreTag","__ais-highlight__","highlightPostTag","__/ais-highlight__","clickAnalytics","userToken","results",[42],{"_43":44,"_223":224,"_225":226,"_227":228,"_32":33,"_229":117,"_230":117,"_231":232,"_234":235,"_236":235,"_237":238,"_29":7,"_239":240,"_261":262,"_265":266,"_267":268,"_274":77},"hits",[45,105,137,165,193],{"_46":47,"_48":49,"_50":51,"_52":53,"_57":58,"_64":65,"_66":67,"_68":69,"_70":71,"_72":73,"_74":75,"_76":77,"_78":79,"_80":81,"_82":83,"_89":90},"name","Samsung - 55\\" Class (54.6\\" Diag.) - LED - 2160p - Smart - 4K Ultra HD TV - Black","description","Enjoy movies, television and music with this Samsung LED smart television. Built-in Wi-Fi lets you connect to your home network to share pictures from devices with the whole family or stream content from apps such as Netflix. This Samsung LED smart television delivers 4k UHD picture for bright colors and crisp imaging.","brand","Samsung","categories",[54,55,56],"TV \u0026 Home Theater","TVs","4K Ultra HD TVs","hierarchicalCategories",{"_59":54,"_60":61,"_62":63},"lvl0","lvl1","TV \u0026 Home Theater \u003e TVs","lvl2","TV \u0026 Home Theater \u003e TVs \u003e 4K Ultra HD TVs","type","51\\"-60\\" tv\'s","price",799.99,"price_range","500 - 2000","image","https://cdn-demo.algolia.com/bestbuy-0118/5217300_sb.jpg","url","https://api.bestbuy.com/click/-/5217300/pdp","free_shipping",false,"rating",4,"popularity",21426,"objectID","5217300","_snippetResult",{"_48":84},{"_85":86,"_87":88},"value","Enjoy movies, television and music with this Samsung LED smart","matchLevel","none","_highlightResult",{"_46":91,"_48":94,"_50":96,"_52":98},{"_85":47,"_87":88,"_92":93},"matchedWords",[],{"_85":49,"_87":88,"_92":95},[],{"_85":51,"_87":88,"_92":97},[],[99,101,103],{"_85":54,"_87":88,"_92":100},[],{"_85":55,"_87":88,"_92":102},[],{"_85":56,"_87":88,"_92":104},[],{"_46":106,"_48":107,"_50":51,"_52":108,"_57":110,"_64":112,"_66":113,"_68":114,"_70":115,"_72":116,"_74":117,"_76":77,"_78":118,"_80":119,"_82":120,"_89":123},"Samsung - 32\\" Class (31.5\\" Diag.) - LED - 1080p - Smart - HDTV - Black","Samsung 32\\" Class UN32J5205AFXZA LED Smart HDTV: Enhance your entertainment experience with access to your favorite TV shows and Internet browser all on the same Smart TV. Connect your devices with the convenient HDMI and USB inputs, to watch movies, stream media and much more.",[54,55,109],"All Flat-Panel TVs",{"_59":54,"_60":61,"_62":111},"TV \u0026 Home Theater \u003e TVs \u003e All Flat-Panel TVs","Mid 32\\" lcd",279.99,"200 - 500","https://cdn-demo.algolia.com/bestbuy-0118/5555039_sb.jpg","https://api.bestbuy.com/click/-/5555039/pdp",true,21354,"5555039",{"_48":121},{"_85":122,"_87":88},"Samsung 32\\" Class UN32J5205AFXZA LED Smart HDTV: Enhance your entertainment",{"_46":124,"_48":126,"_50":128,"_52":130},{"_85":106,"_87":88,"_92":125},[],{"_85":107,"_87":88,"_92":127},[],{"_85":51,"_87":88,"_92":129},[],[131,133,135],{"_85":54,"_87":88,"_92":132},[],{"_85":55,"_87":88,"_92":134},[],{"_85":109,"_87":88,"_92":136},[],{"_46":138,"_48":139,"_50":51,"_52":140,"_57":141,"_64":142,"_66":143,"_68":69,"_70":144,"_72":145,"_74":75,"_76":77,"_78":146,"_80":147,"_82":148,"_89":151},"Samsung - 65\\" Class (64.5\\" Diag.) - LED - 2160p - Smart - 4K Ultra HD TV - with High Dynamic Range - Silver","Sit back and watch stunning HD movies and TV shows with this Samsung 65-inch 4K Ultra HD TV with HDR. This TV provides vibrant, detailed graphics at a variety of angles, letting you enjoy your favorite content from anywhere in the room. This Samsung 65-inch 4K Ultra HD TV with HDR also includes smart TV features including games, apps and a web browser.",[54,55,56],{"_59":54,"_60":61,"_62":63},"61\\"-100 tv\'s",1899.99,"https://cdn-demo.algolia.com/bestbuy-0118/5065600_sb.jpg","https://api.bestbuy.com/click/-/5065600/pdp",21344,"5065600",{"_48":149},{"_85":150,"_87":88},"Sit back and watch stunning HD movies and TV shows",{"_46":152,"_48":154,"_50":156,"_52":158},{"_85":138,"_87":88,"_92":153},[],{"_85":139,"_87":88,"_92":155},[],{"_85":51,"_87":88,"_92":157},[],[159,161,163],{"_85":54,"_87":88,"_92":160},[],{"_85":55,"_87":88,"_92":162},[],{"_85":56,"_87":88,"_92":164},[],{"_46":166,"_48":167,"_50":51,"_52":168,"_57":169,"_64":170,"_66":171,"_68":114,"_70":172,"_72":173,"_74":117,"_76":77,"_78":174,"_80":175,"_82":176,"_89":179},"Samsung - 40\\" Class (40\\" Diag.) - LED - 1080p - Smart - HDTV - Black","Samsung J5200 Series UN40J5200AFXZA LED 1080p Full HD Smart TV: Experience movies and TV shows in clear detail with powerful sound and rich colors on a screen that fits well in a large bedroom or living room. A built-in sensor measures room lighting and adjusts accordingly to provide the best possible picture.",[54,55,109],{"_59":54,"_60":61,"_62":111},"Mid 40\\"-45\\" lcd",349.99,"https://cdn-demo.algolia.com/bestbuy-0118/6422016_sb.jpg","https://api.bestbuy.com/click/-/6422016/pdp",21308,"6422016",{"_48":177},{"_85":178,"_87":88},"Samsung J5200 Series UN40J5200AFXZA LED 1080p Full HD Smart TV",{"_46":180,"_48":182,"_50":184,"_52":186},{"_85":166,"_87":88,"_92":181},[],{"_85":167,"_87":88,"_92":183},[],{"_85":51,"_87":88,"_92":185},[],[187,189,191],{"_85":54,"_87":88,"_92":188},[],{"_85":55,"_87":88,"_92":190},[],{"_85":109,"_87":88,"_92":192},[],{"_46":194,"_48":195,"_52":196,"_57":198,"_64":203,"_66":204,"_68":205,"_70":206,"_72":207,"_74":75,"_78":208,"_76":77,"_80":209,"_82":210,"_89":213},"Amazon - Fire TV Stick with Alexa Voice Remote - Black","Enjoy smart access to videos, games and apps with this Amazon Fire TV stick. Its Alexa voice remote lets you deliver hands-free commands when you want to watch television or engage with other applications. With a quad-core processor, 1GB internal memory and 8GB of storage, this portable Amazon Fire TV stick works fast for buffer-free streaming.",[54,197],"Streaming Media Players",{"_59":199,"_60":200},[54,54],[201,202],"TV \u0026 Home Theater \u003e Streaming Media Players","helloworld","Streaming media plyr",39.99,"1 - 50","https://cdn-demo.algolia.com/bestbuy-0118/5477500_sb.jpg","https://api.bestbuy.com/click/-/5477500/pdp",21469,"5477500",{"_48":211},{"_85":212,"_87":88},"Enjoy smart access to videos, games and apps with this",{"_46":214,"_48":216,"_52":218},{"_85":194,"_87":88,"_92":215},[],{"_85":195,"_87":88,"_92":217},[],[219,221],{"_85":54,"_87":88,"_92":220},[],{"_85":197,"_87":88,"_92":222},[],"nbHits",1200,"page",0,"nbPages",200,"exhaustiveNbHits","exhaustiveTypo","exhaustive",{"_223":117,"_233":117},"typo","query","","queryAfterRemoval","params","filters=categories%3A%22TV+%26+Home+Theater%22\u0026highlightPostTag=__%2Fais-highlight__\u0026highlightPreTag=__ais-highlight__\u0026hitsPerPage=5","renderingContent",{"_241":242},"facetOrdering",{"_11":243,"_247":248},{"_244":245},"order",[50,246,52,66,74,76,64],"hierarchicalCategories.lvl0","values",{"_50":249,"_52":254,"_74":255,"_246":256,"_66":258,"_76":259,"_64":260},{"_244":250,"_252":253},[251],"Apple","sortRemainingBy","count",{"_252":253},{"_252":253},{"_252":257},"alpha",{"_252":253},{"_252":253},{"_252":253},"extensions",{"_263":264},"queryCategorization",{},"processingTimeMS",1,"processingTimingsMS",{"_269":270,"_261":266,"_273":266},"_request",{"_271":272},"roundTrip",28,"total","serverTimeMS","requestParams",[277],{"_30":31,"_36":37,"_34":35,"_32":33},"root","actionData","errors"]\n',
+    );
+  </script>
+  <!--$?--><template id="B:1"></template
+  ><!--/$-->
+</div>
+<script>
+  function $RC(a, b) {
+    a = document.getElementById(a);
+    b = document.getElementById(b);
+    b.parentNode.removeChild(b);
+    if (a) {
+      a = a.previousSibling;
+      var f = a.parentNode,
+        c = a.nextSibling,
+        e = 0;
+      do {
+        if (c && 8 === c.nodeType) {
+          var d = c.data;
+          if ("/$" === d)
+            if (0 === e) break;
+            else e--;
+          else ("$" !== d && "$?" !== d && "$!" !== d) || e++;
+        }
+        d = c.nextSibling;
+        f.removeChild(c);
+        c = d;
+      } while (c);
+      for (; b.firstChild; ) f.insertBefore(b.firstChild, c);
+      a.data = "$";
+      a._reactRetry && a._reactRetry();
+    }
+  }
+  $RC("B:0", "S:0");
+</script>
+<div hidden id="S:1">
+  <script>
+    window.__remixContext.streamController.close();
+  </script>
+</div>
+<script>
+  $RC("B:1", "S:1");
+</script>
