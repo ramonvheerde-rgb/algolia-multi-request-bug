@@ -1,4 +1,10 @@
-import { Configure, Hits, Index, useDynamicWidgets } from "react-instantsearch";
+import {
+  Configure,
+  Hits,
+  Index,
+  RefinementList,
+  useDynamicWidgets,
+} from "react-instantsearch";
 import { Hit } from "~/algolia/hit";
 
 interface Section {
@@ -16,11 +22,14 @@ export default function SectionList(props: SectionListProps) {
 
   return (
     <>
-      {/* <div>
+      <div>
+        {/* Based on all the available attributes, we render the filters */}
         {attributesToRender.map((attribute) => {
           return <RefinementList attribute={attribute} />;
         })}
-      </div> */}
+      </div>
+
+      {/* // For each seaction we render a new Index, because the result is based on the filter */}
       {sections.map((section) => {
         return (
           <>
