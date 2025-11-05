@@ -26,6 +26,7 @@ export default defineConfig({
       "localhost",
       ".yourdomain.com",
       "gtf4lh-5173.csb.app",
+      "lvq53n-5173.csb.app",
       // Add more hosts as needed
     ],
   },
